@@ -187,6 +187,9 @@ def addTransactions(borrow,returns,user,book):
                     inputCategory=str(input("Type your book's category: "))
                     if inputCategory=='0':
                         break
+                    if checkCategory(book,inputCategory) == False:
+                        print('\nNo Category Detected, please type the category correctly...')
+                        break
                     # display books
                     print("\n--------------------------------------------------\n")
                     showAvalaibleBooks(book,inputCategory,'avalaible')
@@ -324,7 +327,9 @@ def addTransactions(borrow,returns,user,book):
                     inputCategory=str(input("Type your book's category: "))
                     if inputCategory=='0':
                         break
-
+                    if checkCategory(book,inputCategory) == False:
+                        print('\nNo Category Detected, please type the category correctly...')
+                        break
                     # Input borrow id
                     print("\n--------------------------------------------------\n")
                     showAllBorrows(borrow)
@@ -470,7 +475,9 @@ def editTransactions(borrow,user,book):
                 inputCategory=str(input("Type your book's category: "))
                 if inputCategory=='0':
                     break
-                
+                if checkCategory(book,inputCategory) == False:
+                        print('\nNo Category Detected, please type the category correctly...')
+                        break
                 # set current borrowed book status to avalaible first
                 book[inputCategory][borrow[inputBorrowID][0]][3]='avalaible'
 
@@ -637,6 +644,9 @@ def deleteTransactions(borrow,returns,user,book):
                         inputCategory=str(input("Type your book's category: "))
                         if inputCategory=='0':
                             break
+                        if checkCategory(book,inputCategory) == False:
+                            print('\nNo Category Detected, please type the category correctly...')
+                            break
                         # set current book status to avalaible
                         currentBookISBN=borrow[inputBorrowID][0]
                         book[inputCategory][currentBookISBN][3]='avalaible'
@@ -707,6 +717,9 @@ def deleteTransactions(borrow,returns,user,book):
                         print("Choose book's category...")
                         inputCategory=str(input("Type your book's category: "))
                         if inputCategory=='0':
+                            break
+                        if checkCategory(book,inputCategory) == False:
+                            print('\nNo Category Detected, please type the category correctly...')
                             break
                         # set current book status to avalaible
                         currentBookISBN=returns[inputReturnID][0]
