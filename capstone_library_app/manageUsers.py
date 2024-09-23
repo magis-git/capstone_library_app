@@ -40,34 +40,34 @@ def displayUsers(user):
     print("Display User Menu")
     displayMenu(userMenu)
     #input the menu
-    userInput = int(input("Enter the number of the menu you want to run: "))
+    userInput = str(input("Enter the number of the menu you want to run: "))
 
-    while userInput !=4 :
-        if userInput ==1 : # display all users 
+    while userInput !='4' :
+        if userInput =='1' : # display all users 
             showAllUsers(user)
             print("\n--------------------------------------------------\n")
             
             print("Display User Menu")
             displayMenu(userMenu)
             #input the menu
-            userInput = int(input("Enter the number of the menu you want to run: "))    
+            userInput = str(input("Enter the number of the menu you want to run: "))    
     
-        elif userInput ==2: # display free tax users
+        elif userInput =='2': # display free tax users
             showFreeTaxUsers(user)
             print("\n--------------------------------------------------\n")
 
             print("Display User Menu")
             displayMenu(userMenu)
             #input the menu
-            userInput = int(input("Enter the number of the menu you want to run: "))  
-        elif userInput ==3: # display users with tax
+            userInput = str(input("Enter the number of the menu you want to run: "))  
+        elif userInput =='3': # display users with tax
             showTaxUsers(user)
             print("\n--------------------------------------------------\n")
 
             print("Display User Menu")
             displayMenu(userMenu)
             #input the menu
-            userInput = int(input("Enter the number of the menu you want to run: "))  
+            userInput = str(input("Enter the number of the menu you want to run: "))  
         else :
             pass
 
@@ -75,7 +75,7 @@ def displayUsers(user):
         print("Display User Menu")
         displayMenu(userMenu)
         #input the menu
-        userInput = int(input("Enter the number of the menu you want to run: "))
+        userInput = str(input("Enter the number of the menu you want to run: "))
 
 # Function to increment data
 def increment(data):
@@ -97,10 +97,10 @@ def addUsers(user):
     print("---Input 1 if you want to add users")
     print("---Input 0 if you want to cancel")
 
-    inputAddUsers=int(input("Do you want to add new user?: "))
+    inputAddUsers=str(input("Do you want to add new user?: "))
 
-    while inputAddUsers !=0:
-        if inputAddUsers == 1:
+    while inputAddUsers !='0':
+        if inputAddUsers == '1':
             print("\n--------------------------------------------------\n")
             showAllUsers(user)
             print("\n--------------------------------------------------\n")
@@ -137,10 +137,10 @@ def addUsers(user):
             print("\n--------------------------------------------------\n")
             print(f'This is your new user detail\nName: {inputName}\nPhone Number: {inputPhone}\nAddress: {inputAddress}')
             print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-            inputSave=int(input('Choose your option: '))
+            inputSave=str(input('Choose your option: '))
 
-            while inputSave != 0:
-                if inputSave==1:
+            while inputSave != '0':
+                if inputSave=='1':
                     inputUserID=increment(user) # Input ID with increment function
                     if (inputName!='' and inputAddress!='') and (type(inputName)==str and type(inputAddress==str and type(inputPhone)==str)):
                         user[inputUserID]=newUser
@@ -157,7 +157,7 @@ def addUsers(user):
                 print("\n--------------------------------------------------\n")
                 print(f'This is your new user detail\nName: {inputName}\nPhone Number: {inputPhone}\nAddress: {inputAddress}')
                 print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                inputSave=int(input('Choose your option: '))
+                inputSave=str(input('Choose your option: '))
 
         else:
             pass
@@ -167,7 +167,7 @@ def addUsers(user):
         print("---Input 1 if you want to add users")
         print("---Input 0 if you want to cancel")
 
-        inputAddUsers=int(input("Do you want to add new user?: "))
+        inputAddUsers=str(input("Do you want to add new user?: "))
 
 # Function for check if ID exist in the list
 def checkID(data,inputData):
@@ -192,10 +192,10 @@ def editUsers(user):
     print("---Input 1 if you want to edit users")
     print("---Input 0 if you want to cancel")
 
-    inputEditUsers=int(input("Do you want to edit user?: "))
+    inputEditUsers=str(input("Do you want to edit user?: "))
 
-    while inputEditUsers !=0:
-        if inputEditUsers == 1:
+    while inputEditUsers !='0':
+        if inputEditUsers == '1':
             print("\n--------------------------------------------------\n")
             showAllUsers(user)
             print("\n--------------------------------------------------\n")
@@ -240,10 +240,10 @@ def editUsers(user):
                 print("\n--------------------------------------------------\n")
                 print(f'This is your new user detail\nName: {inputName}\nPhone Number: {inputPhone}\nAddress: {inputAddress}')
                 print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                inputSave=int(input('Choose your option: '))
+                inputSave=str(input('Choose your option: '))
 
-                while inputSave != 0:
-                    if inputSave==1:
+                while inputSave != '0':
+                    if inputSave=='1':
                         if (inputName!='' and inputAddress!='') and (type(inputName)==str and type(inputAddress==str and type(inputPhone)==str)):
                             user[inputUserID]=newUser
                             (f'{inputName} is Success')
@@ -262,7 +262,7 @@ def editUsers(user):
                     print("\n--------------------------------------------------\n")
                     print(f'This is your new user detail\nName: {inputName}\nPhone Number: {inputPhone}\nAddress: {inputAddress}')
                     print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                    inputSave=int(input('Choose your option: '))
+                    inputSave=str(input('Choose your option: '))
                 
             else:
                 print("No user detected...")
@@ -275,7 +275,7 @@ def editUsers(user):
         print("---Input 1 if you want to edit users")
         print("---Input 0 if you want to cancel")
 
-        inputEditUsers=int(input("Do you want to edit user?: "))
+        inputEditUsers=str(input("Do you want to edit user?: "))
 
 # DELETE FUNCTION
 # Delete A User Function
@@ -288,10 +288,10 @@ def deleteUsers(user):
     print("---Input 1 if you want to delete users")
     print("---Input 0 if you want to cancel")
 
-    inputDeleteUsers=int(input("Do you want to delete user?: "))
+    inputDeleteUsers=str(input("Do you want to delete user?: "))
 
-    while inputDeleteUsers !=0:
-        if inputDeleteUsers == 1:
+    while inputDeleteUsers !='0':
+        if inputDeleteUsers == '1':
             print("\n--------------------------------------------------\n")
             showAllUsers(user)
             print("\n--------------------------------------------------\n")
@@ -304,10 +304,10 @@ def deleteUsers(user):
                     print("\n--------------------------------------------------\n")
                     print(f'This is your new user detail\nName: {user[inputUserID][0]}\nPhone Number: {user[inputUserID][2]}\nAddress: {user[inputUserID][3]}')
                     print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                    inputDelete=int(input('Choose your option: '))
+                    inputDelete=str(input('Choose your option: '))
 
-                    while inputDelete != 0:
-                        if inputDelete==1:
+                    while inputDelete != '0':
+                        if inputDelete=='1':
                             if inputUserID != '':
                                 (f'{user[inputUserID][0]} is Deleted')
                                 del user[inputUserID]
@@ -323,7 +323,7 @@ def deleteUsers(user):
                         print("\n--------------------------------------------------\n")
                         print(f'This is your user detail\nName: {user[inputUserID][0]}\nPhone Number: {user[inputUserID][2]}\nAddress: {user[inputUserID][3]}')
                         print('Do you want to delete?\n---Press 1 to save\n---Press 0 to cancel')
-                        inputDelete=int(input('Choose your option: '))
+                        inputDelete=str(input('Choose your option: '))
                 else:
                     print("Can't delete user because user still have a tax to pay...")
                     break
@@ -341,4 +341,4 @@ def deleteUsers(user):
         print("---Input 1 if you want to delete users")
         print("---Input 0 if you want to cancel")
 
-        inputDeleteUsers=int(input("Do you want to delete user?: "))
+        inputDeleteUsers=str(input("Do you want to delete user?: "))

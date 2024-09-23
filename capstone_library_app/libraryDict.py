@@ -24,7 +24,6 @@ book={
         '9786020380407': ['Prinsip Pareto', 'Richard Cho','2020','avalaible'],
         '9786239989262': ['Rahasia Sukses Membangun Bisnis', 'Alvin Paradipratya','2023','avalaible'],
         '9786029992175': ['Mukjizat Kartu Kredit', 'Imam Wibowo','2016','avalaible'],
-        '9786230404306': ['Bicara Itu Ada Seninya', 'Oh Su Hyang','2021','avalaible'],
         '9786230404306': ['Bicara Itu Ada Seninya', 'Oh Su Hyang','2021','rented'],
         '9786232167995': ['Komunikasi itu ada seninya', 'Oh Su Hyang','2020','avalaible'],
         '9786232444652': ['Seni Berbahagia', 'Ardhina','2020','avalaible'],

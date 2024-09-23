@@ -49,19 +49,19 @@ def displayBooks(book):
                 # Filtering display
                 print("\nDISPLAY BOOKS")
                 displayMenu(avalaibleMenu)
-                inputAvalaible= int(input('Enter the number of menu you want to select: '))
-                while inputAvalaible != 4:
-                    if inputAvalaible ==1 : # display all books 
+                inputAvalaible= str(input('Enter the number of menu you want to select: '))
+                while inputAvalaible != '4':
+                    if inputAvalaible =='1' : # display all books 
                         print("\n--------------------------------------------------\n")
                         showAllBooks(book, categoryInput)
                         print("\n--------------------------------------------------\n")
                               
-                    elif inputAvalaible ==2: # display avalaible books
+                    elif inputAvalaible =='2': # display avalaible books
                         print("\n--------------------------------------------------\n")
                         showAvalaibleBooks(book,categoryInput,'avalaible')
                         print("\n--------------------------------------------------\n")
                         
-                    elif inputAvalaible ==3: # Display rented books
+                    elif inputAvalaible =='3': # Display rented books
                         print("\n--------------------------------------------------\n")
                         showAvalaibleBooks(book,categoryInput,'rented')
                         print("\n--------------------------------------------------\n")
@@ -70,7 +70,7 @@ def displayBooks(book):
                     
 
                     displayMenu(avalaibleMenu)
-                    inputAvalaible= int(input('Enter the number of menu you want to select: '))
+                    inputAvalaible= str(input('Enter the number of menu you want to select: '))
             else:
                 pass
             
@@ -110,10 +110,10 @@ def addBooks(book):
     print("---Input 1 if you want to add books")
     print("---Input 0 if you want to cancel")
 
-    inputAddBooks=int(input("Do you want to add Book?: "))
+    inputAddBooks=str(input("Do you want to add Book?: "))
 
-    while inputAddBooks !=0:
-        if inputAddBooks == 1:
+    while inputAddBooks !='0':
+        if inputAddBooks == '1':
             # Choosing book's category
             displayCategories(book)
             inputCategory=str(input("Enter Book's Category: "))
@@ -125,6 +125,10 @@ def addBooks(book):
                 print("Category Not Exist")
                 continue
             print(f'Saving Book into {inputCategory}...\n')
+
+            print("\n--------------------------------------------------\n")
+            showAvalaibleBooks(book,inputCategory,'avalaible')
+            print("\n--------------------------------------------------\n")
 
             # list for new book
             newBook=[]
@@ -143,7 +147,7 @@ def addBooks(book):
                    continue
                 else:
                    if checkISBN(book,inputISBN,inputCategory) == False:
-                      print("There is no same book detected...")
+                      print("You can proceed to input your new book...")
                    else:
                       print("You can't add same Book")
                       continue
@@ -179,10 +183,10 @@ def addBooks(book):
             # Make sure u want to save it
             print(f'\nThis is your book detail\nISBN: {inputISBN}\nTitle: {inputTitle}\nAuthor: {inputAuthor}\nYear: {inputYear}')
             print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-            inputSave=int(input('Choose your option: '))
+            inputSave=str(input('Choose your option: '))
 
-            while inputSave != 0:
-                if inputSave==1:
+            while inputSave != '0':
+                if inputSave=='1':
                     if checkCategory(book,inputCategory)==True and (inputTitle!='' and inputAuthor!=''):
                         # Saving the book to dictionary
                         book[inputCategory][inputISBN]=newBook
@@ -199,7 +203,7 @@ def addBooks(book):
                     pass
                 print(f'\nThis is your book detail\nISBN: {inputISBN}\nTitle: {inputTitle}\nAuthor: {inputAuthor}\nYear: {inputYear}')
                 print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                inputSave=int(input('Choose your option: '))
+                inputSave=str(input('Choose your option: '))
 
         else:
             pass
@@ -208,7 +212,7 @@ def addBooks(book):
         print("\nAdd Books Menu")
         print("---Input 1 if you want to add books")
         print("---Input 0 if you want to cancel")
-        inputAddBooks=int(input("Do you want to add Book?: "))
+        inputAddBooks=str(input("Do you want to add Book?: "))
 
 # UPDATE FUNCTION
 # Edit A Book Function
@@ -219,10 +223,10 @@ def editBooks(book):
     print("---Input 1 if you want to edit books")
     print("---Input 0 if you want to cancel")
 
-    inputEditBooks=int(input("Do you want to edit Book?: "))
+    inputEditBooks=str(input("Do you want to edit Book?: "))
 
-    while inputEditBooks !=0:
-        if inputEditBooks == 1:
+    while inputEditBooks !='0':
+        if inputEditBooks == '1':
             # Choose book Categories
             showAllBooks(book,'fiction')
             showAllBooks(book,'non fiction')
@@ -300,10 +304,10 @@ def editBooks(book):
             print("\n---------------------------------------\n")
             print(f'This is your new book detail\nISBN: {inputISBN}\nTitle: {inputTitle}\nAuthor: {inputAuthor}\nYear: {inputYear}')
             print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-            inputSave=int(input('Choose your option: '))
+            inputSave=str(input('Choose your option: '))
 
-            while inputSave != 0:
-                if inputSave==1:
+            while inputSave != '0':
+                if inputSave=='1':
                     # Check if book still avalaible or not
                     # if still rented cannot edit the book
                     if book[inputCategory][inputISBN][3]=='avalaible':
@@ -327,7 +331,7 @@ def editBooks(book):
                 print("\n---------------------------------------\n")
                 print(f'This is your new book detail\nISBN: {inputISBN}\nTitle: {inputTitle}\nAuthor: {inputAuthor}\nYear: {inputYear}')
                 print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                inputSave=int(input('Choose your option: '))
+                inputSave=str(input('Choose your option: '))
 
         else:
             pass
@@ -338,7 +342,7 @@ def editBooks(book):
         print("---Input 1 if you want to edit books")
         print("---Input 0 if you want to cancel")
 
-        inputEditBooks=int(input("Do you want to edit Book?: "))
+        inputEditBooks=str(input("Do you want to edit Book?: "))
 
 # DELETE FUNCTION
 # Delete a book function
@@ -348,10 +352,10 @@ def deleteBooks(book):
     print("---Input 1 if you want to delete books")
     print("---Input 0 if you want to cancel")
 
-    inputDeleteBooks=int(input("Do you want to delete Book?: "))
+    inputDeleteBooks=str(input("Do you want to delete Book?: "))
 
-    while inputDeleteBooks !=0:
-        if inputDeleteBooks == 1:
+    while inputDeleteBooks !='0':
+        if inputDeleteBooks == '1':
             # Choose book Categories
             showAllBooks(book,'fiction')
             showAllBooks(book,'non fiction')
@@ -398,10 +402,10 @@ def deleteBooks(book):
             print("\n--------------------------------------------------\n")
             print(f'This is your book detail\nISBN: {inputISBN}\nTitle: {book[inputCategory][inputISBN][0]}\nAuthor: {book[inputCategory][inputISBN][1]}\nYear: {book[inputCategory][inputISBN][2]}')
             print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-            inputDelete=int(input('Choose your option: '))
+            inputDelete=str(input('Choose your option: '))
 
-            while inputDelete != 0:
-                if inputDelete==1:
+            while inputDelete != '0':
+                if inputDelete=='1':
                     # Check if book to delete still avalaible or not
                     # If still rented, it cant delete the book
                     if book[inputCategory][inputISBN][3]=='avalaible':
@@ -422,7 +426,7 @@ def deleteBooks(book):
                 print("\n--------------------------------------------------\n")
                 print(f'This is your book detail\nISBN: {inputISBN}\nTitle: {book[inputCategory][inputISBN][0]}\nAuthor: {book[inputCategory][inputISBN][1]}\nYear: {book[inputCategory][inputISBN][2]}')
                 print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                inputDelete=int(input('Choose your option: '))
+                inputDelete=str(input('Choose your option: '))
 
         else:
             pass
@@ -432,4 +436,4 @@ def deleteBooks(book):
         print("---Input 1 if you want to delete books")
         print("---Input 0 if you want to cancel")
 
-        inputDeleteBooks=int(input("Do you want to delete Book?: "))
+        inputDeleteBooks=str(input("Do you want to delete Book?: "))

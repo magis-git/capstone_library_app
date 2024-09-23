@@ -10,10 +10,10 @@ def taxpayment(user,returns):
     print("\nTax Payment Menu:")
     print("---Press 1 to choose user for payment\n---Press 0 to cancel payment")
 
-    inputMenu=int(input("Enter number: "))
+    inputMenu=str(input("Enter number: "))
 
-    while inputMenu != 0:
-        if inputMenu ==1:
+    while inputMenu != '0':
+        if inputMenu =='1':
             showTaxUsers(user)
             print("\n--------------------------------------------------\n")
             print("Choose user for the tax payment by ID...")
@@ -27,10 +27,10 @@ def taxpayment(user,returns):
                     
                 print(f"Name: {userName}\nTotal tax payment: {userTax}")
                 print('\nIs this user u want to proceed?\n---Press 1 to continue payment\n---Press 0 to cancel')
-                inputTaxMenu=int(input('Enter the number of the menu you want to run: '))
+                inputTaxMenu=str(input('Enter the number of the menu you want to run: '))
 
-                while inputTaxMenu != 0:
-                    if inputTaxMenu == 1:
+                while inputTaxMenu != '0':
+                    if inputTaxMenu == '1':
                         print(f"Name: {userName}\nTotal tax payment: {userTax}")
                         print("Please input your amount of money...")
                         inputMoney=int(input('Input money: '))
@@ -72,7 +72,7 @@ def taxpayment(user,returns):
 
                     print(f"Name: {userName}\nTotal tax payment: {userTax}")
                     print('\nIs this user u want to proceed?\n---Press 1 to continue payment\n---Press 0 to cancel')
-                    inputTaxMenu=int(input('Enter the number of the menu you want to run: '))
+                    inputTaxMenu=str(input('Enter the number of the menu you want to run: '))
             else:
                 print('No User Detected')
                 break
@@ -84,5 +84,5 @@ def taxpayment(user,returns):
         print("\nTax Payment Menu:")
         print("---Press 1 to choose user for payment\n---Press 0 to cancel payment")
 
-        inputMenu=int(input("Enter number: "))
+        inputMenu=str(input("Enter number: "))
 

@@ -76,10 +76,10 @@ def displayTransactions(borrow,returns):
     print("Transaction Menu:")
     displayMenu(transactionMenu)
     #input the menu
-    transactionInput = int(input("Enter the number of the menu you want to run: "))
+    transactionInput = str(input("Enter the number of the menu you want to run: "))
 
-    while transactionInput !=3 :
-        if transactionInput ==1 : # display borrow transaction list
+    while transactionInput !='3' :
+        if transactionInput =='1' : # display borrow transaction list
             print("\n--------------------------------------------------\n")
             showAllBorrows(borrow)
             print("\n--------------------------------------------------\n")
@@ -87,43 +87,43 @@ def displayTransactions(borrow,returns):
             print("Transaction Menu:")
             displayMenu(transactionMenu)
             #input the menu
-            transactionInput = int(input("Enter the number of the menu you want to run: "))
-        elif transactionInput ==2: # display return transaction list
+            transactionInput = str(input("Enter the number of the menu you want to run: "))
+        elif transactionInput =='2': # display return transaction list
             print("\nDISPLAY RETURN TRANSACTION")
             print("Return Transaction Menu:")
             displayMenu(returnMenu)
             #input the menu
-            returnInput = int(input("Enter the number of the menu you want to run: "))
+            returnInput = str(input("Enter the number of the menu you want to run: "))
 
-            while returnInput !=4 :
-                    if returnInput ==1 : # display all return transaction list
+            while returnInput !='4' :
+                    if returnInput =='1' : # display all return transaction list
                         print("\n--------------------------------------------------\n")
                         showAllReturns(returns) 
                         print("\n--------------------------------------------------\n")
                 
-                    elif returnInput ==2: # display On Time return transaction list
+                    elif returnInput =='2': # display On Time return transaction list
                         print("\n--------------------------------------------------\n")
                         showOntimeReturns(returns)
                         print("\n--------------------------------------------------\n")
 
-                    elif returnInput ==3: # display late return transaction list
+                    elif returnInput =='3': # display late return transaction list
                         print("Late Return Transaction Menu:")
                         displayMenu(lateReturnMenu)
                         #input the menu
-                        lateReturnInput = int(input("Enter the number of the menu you want to run: "))
+                        lateReturnInput = str(input("Enter the number of the menu you want to run: "))
 
-                        while lateReturnInput != 4:
-                            if lateReturnInput ==1 : # display all return transaction list
+                        while lateReturnInput != '4':
+                            if lateReturnInput =='1' : # display all return transaction list
                                 print("\n--------------------------------------------------\n")
                                 showAllLateReturns(returns)
                                 print("\n--------------------------------------------------\n") 
                         
-                            elif lateReturnInput ==2: # display On Time return transaction list
+                            elif lateReturnInput =='2': # display On Time return transaction list
                                 print("\n--------------------------------------------------\n")
                                 showNotPayedLateReturns(returns)
                                 print("\n--------------------------------------------------\n")
 
-                            elif lateReturnInput==3:
+                            elif lateReturnInput=='3':
                                 print("\n--------------------------------------------------\n")
                                 showPayedLateReturns(returns)
                                 print("\n--------------------------------------------------\n")
@@ -134,7 +134,7 @@ def displayTransactions(borrow,returns):
                             print("Late Return Transaction Menu:")
                             displayMenu(lateReturnMenu)
                             #input the menu
-                            lateReturnInput = int(input("Enter the number of the menu you want to run: "))
+                            lateReturnInput = str(input("Enter the number of the menu you want to run: "))
 
                     else :
                         pass
@@ -142,7 +142,7 @@ def displayTransactions(borrow,returns):
                     print("Borrow Transaction Menu:")
                     displayMenu(returnMenu)
                     #input the menu
-                    returnInput = int(input("Enter the number of the menu you want to run: "))
+                    returnInput = str(input("Enter the number of the menu you want to run: "))
 
         else :
            pass
@@ -151,7 +151,7 @@ def displayTransactions(borrow,returns):
         print("Transaction Menu:")
         displayMenu(transactionMenu)
         #input the menu
-        transactionInput = int(input("Enter the number of the menu you want to run: ")) 
+        transactionInput = str(input("Enter the number of the menu you want to run: ")) 
 
 # CREATE FUNCTION
 # ADD A Transactions
@@ -160,10 +160,10 @@ def addTransactions(borrow,returns,user,book):
     print("Transaction Menu:")
     displayMenu(transactionMenu)
     #input the menu
-    transactionInput = int(input("Enter the number of the menu you want to run: "))
+    transactionInput = str(input("Enter the number of the menu you want to run: "))
 
-    while transactionInput !=3 :
-        if transactionInput ==1 : # display borrow transaction list
+    while transactionInput !='3' :
+        if transactionInput =='1' : # display borrow transaction list
             print("\nADD BORROW TRANSACTIONS")
             print("\n--------------------------------------------------\n")
             showAllBorrows(borrow)
@@ -173,10 +173,10 @@ def addTransactions(borrow,returns,user,book):
             print("---Input 1 if you want to add borrow transaction")
             print("---Input 0 if you want to cancel\n")
 
-            inputAddBorrows=int(input("Do you want to add new transaction?: "))
+            inputAddBorrows=str(input("Do you want to add new transaction?: "))
 
-            while inputAddBorrows !=0:
-                if inputAddBorrows == 1:
+            while inputAddBorrows !='0':
+                if inputAddBorrows == '1':
                     # new borrow list
                     newBorrow=[]
                     # display categories
@@ -259,10 +259,10 @@ def addTransactions(borrow,returns,user,book):
                     print("\n--------------------------------------------------\n")
 
                     print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                    inputSave=int(input('Choose your option: '))
+                    inputSave=str(input('Choose your option: '))
 
-                    while inputSave != 0:
-                        if inputSave==1:
+                    while inputSave != '0':
+                        if inputSave=='1':
                             if user[inputUserID][4]==0:
                                 inputBorrowID=increment(borrow)
                                 if (inputISBN !='' and inputUserID !='' and inputBorrowDateTransaction !=''):
@@ -292,7 +292,7 @@ def addTransactions(borrow,returns,user,book):
                         print("\n--------------------------------------------------\n")
 
                         print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                        inputSave=int(input('Choose your option: '))
+                        inputSave=str(input('Choose your option: '))
 
                 else:
                     pass
@@ -301,9 +301,9 @@ def addTransactions(borrow,returns,user,book):
                 print("Input 1 if you want to add borrow transaction\n")
                 print("Input 0 if you want to cancel\n")
 
-                inputAddBorrows=int(input("Do you want to add new transaction?: "))
+                inputAddBorrows=str(input("Do you want to add new transaction?: "))
             
-        elif transactionInput ==2: # display return transaction list
+        elif transactionInput =='2': # display return transaction list
             # show borrow list
             print("\n--------------------------------------------------\n")
             showAllBorrows(borrow)
@@ -313,10 +313,10 @@ def addTransactions(borrow,returns,user,book):
             print("---Input 1 if you want to add return transaction")
             print("---Input 0 if you want to cancel")
 
-            inputAddReturns=int(input("Do you want to add new transaction?: "))
+            inputAddReturns=str(input("Do you want to add new transaction?: "))
 
-            while inputAddReturns !=0:
-                if inputAddReturns == 1:
+            while inputAddReturns !='0':
+                if inputAddReturns == '1':
                     # new return list
                     newReturn=[]
 
@@ -381,10 +381,10 @@ def addTransactions(borrow,returns,user,book):
                     print("\n--------------------------------------------------\n")
                     print(f'\nThis is your new transaction detail\nBook Title: {inputTitle}\nName: {inputName}\nDate: {inputDateTransaction}\nReturn Status: {inputStatus}')
                     print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                    inputSave=int(input('Choose your option: '))
+                    inputSave=str(input('Choose your option: '))
 
-                    while inputSave != 0:
-                        if inputSave==1:
+                    while inputSave != '0':
+                        if inputSave=='1':
                             inputReturnID=increment(returns)
                             if (inputISBN !='' and inputUserID !='' and inputDateTransaction !=''):
                                 returns[inputReturnID]=newReturn
@@ -416,7 +416,7 @@ def addTransactions(borrow,returns,user,book):
                         print("\n--------------------------------------------------\n")
                         print(f'\nThis is your new transaction detail\nBook Title: {inputTitle}\nName: {inputName}\nDate: {inputDateTransaction}\nReturn Status: {inputStatus}')
                         print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                        inputSave=int(input('Choose your option: '))
+                        inputSave=str(input('Choose your option: '))
 
                 else:
                     pass
@@ -428,7 +428,7 @@ def addTransactions(borrow,returns,user,book):
                 print("Input 1 if you want to add return transaction\n")
                 print("Input 0 if you want to cancel\n")
 
-                inputAddReturns=int(input("Do you want to add new transaction?: "))
+                inputAddReturns=str(input("Do you want to add new transaction?: "))
 
         else :
             pass
@@ -437,7 +437,7 @@ def addTransactions(borrow,returns,user,book):
         print("Transaction Menu:")
         displayMenu(transactionMenu)
         #input the menu
-        transactionInput = int(input("Enter the number of the menu you want to run: "))
+        transactionInput = str(input("Enter the number of the menu you want to run: "))
 
 # UPDATE FUNCTION
 # Edit Borrow Transaction
@@ -451,10 +451,10 @@ def editTransactions(borrow,user,book):
     print("---Input 1 if you want to edit borrow transaction")
     print("---Input 0 if you want to cancel\n")
 
-    inputAddBorrows=int(input("Do you want to add new transaction?: "))
+    inputAddBorrows=str(input("Do you want to add new transaction?: "))
 
-    while inputAddBorrows !=0:
-        if inputAddBorrows == 1:
+    while inputAddBorrows !='0':
+        if inputAddBorrows == '1':
             
             # input borrow id
             print("\n--------------------------------------------------\n")
@@ -476,10 +476,14 @@ def editTransactions(borrow,user,book):
                 if inputCategory=='0':
                     break
                 if checkCategory(book,inputCategory) == False:
-                        print('\nNo Category Detected, please type the category correctly...')
-                        break
+                    print('\nNo Category Detected, please type the category correctly...')
+                    break
                 # set current borrowed book status to avalaible first
-                book[inputCategory][borrow[inputBorrowID][0]][3]='avalaible'
+                currentISBN=borrow[inputBorrowID][0]
+                if checkISBN(book,currentISBN,inputCategory) == False:
+                    print("Wrong input...")
+                    break
+                book[inputCategory][currentISBN][3]='avalaible'
 
                 # display books
                 print("\n--------------------------------------------------\n")
@@ -500,7 +504,7 @@ def editTransactions(borrow,user,book):
                         continue
                     else:
                         if checkISBN(book,inputISBN,inputCategory) == True:
-                            print("There is no book detected...")
+                            print("You can proceed...")
                         else:
                             print("Book detected...")
                             continue
@@ -552,10 +556,10 @@ def editTransactions(borrow,user,book):
                     print("\n--------------------------------------------------\n")
 
                     print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                    inputSave=int(input('Choose your option: '))
+                    inputSave=str(input('Choose your option: '))
 
-                    while inputSave != 0:
-                        if inputSave==1:
+                    while inputSave != '0':
+                        if inputSave=='1':
                             if user[inputUserID][4]==0:
                                 
                                 if (inputISBN !='' and inputUserID !='' and inputBorrowDateTransaction !=''):
@@ -587,7 +591,7 @@ def editTransactions(borrow,user,book):
                         print("\n--------------------------------------------------\n")
 
                         print('Do you want to save?\n---Press 1 to save\n---Press 0 to cancel')
-                        inputSave=int(input('Choose your option: '))
+                        inputSave=str(input('Choose your option: '))
 
 
             else:
@@ -605,17 +609,17 @@ def editTransactions(borrow,user,book):
         print("---Input 1 if you want to edit borrow transaction")
         print("---Input 0 if you want to cancel\n")
 
-        inputAddBorrows=int(input("Do you want to add new transaction?: "))
+        inputAddBorrows=str(input("Do you want to add new transaction?: "))
 
 def deleteTransactions(borrow,returns,user,book):
     print("\nDELETE TRANSACTION")
     print("Transaction Menu:")
     displayMenu(transactionMenu)
     #input the menu
-    transactionInput = int(input("Enter the number of the menu you want to run: "))
+    transactionInput = str(input("Enter the number of the menu you want to run: "))
 
-    while transactionInput !=3 :
-        if transactionInput ==1 : # display borrow transaction list
+    while transactionInput !='3' :
+        if transactionInput =='1' : # display borrow transaction list
             print("\n--------------------------------------------------\n")
             showAllBorrows(borrow)
             print("\n--------------------------------------------------\n")         
@@ -624,10 +628,10 @@ def deleteTransactions(borrow,returns,user,book):
             print("---Input 1 if you want to delete borrow transaction")
             print("---Input 0 if you want to cancel")
 
-            inputDeleteBorrows=int(input("Do you want to delete transaction?: "))
+            inputDeleteBorrows=str(input("Do you want to delete transaction?: "))
 
-            while inputDeleteBorrows !=0:
-                if inputDeleteBorrows == 1:
+            while inputDeleteBorrows !='0':
+                if inputDeleteBorrows == '1':
                     print("\n--------------------------------------------------\n")  
                     showAllBorrows(borrow)
                     print("\n--------------------------------------------------\n")  
@@ -649,15 +653,18 @@ def deleteTransactions(borrow,returns,user,book):
                             break
                         # set current book status to avalaible
                         currentBookISBN=borrow[inputBorrowID][0]
+                        if checkISBN(book,currentBookISBN,inputCategory) == False:
+                            print('\nNo ISBN Detected, please type the category correctly...')
+                            break
                         book[inputCategory][currentBookISBN][3]='avalaible'
 
                         print("\n--------------------------------------------------\n")
                         print(f'\nThis is your transaction detail\nBook Title: {borrow[inputBorrowID][1]}\nName: {borrow[inputBorrowID][3]}\nBorrow Date: {borrow[inputBorrowID][4]}')
                         print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                        inputDelete=int(input('Choose your option: '))
+                        inputDelete=str(input('Choose your option: '))
 
-                        while inputDelete != 0:
-                            if inputDelete==1:
+                        while inputDelete != '0':
+                            if inputDelete=='1':
                                 if (inputBorrowID !=''):
                                     (f'{borrow[inputBorrowID][3]} borrowing {borrow[inputBorrowID][1]} is deleted...')
                                     del borrow[inputBorrowID]
@@ -676,7 +683,7 @@ def deleteTransactions(borrow,returns,user,book):
                             print("\n--------------------------------------------------\n")
                             print(f'\nThis is your transaction detail\nBook Title: {borrow[inputBorrowID][1]}\nName: {borrow[inputBorrowID][3]}\nBorrow Date: {borrow[inputBorrowID][4]}')
                             print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                            inputDelete=int(input('Choose your option: '))
+                            inputDelete=str(input('Choose your option: '))
                     else:
                         print('No transaction detected...')
                         break
@@ -685,12 +692,12 @@ def deleteTransactions(borrow,returns,user,book):
                     pass
                 
             print("\nDelete Borrow Transaction Menu")
-            print("Input 1 if you want to delete borrow transaction\n")
-            print("Input 0 if you want to cancel\n")
+            print("---Input 1 if you want to delete borrow transaction\n")
+            print("---Input 0 if you want to cancel\n")
 
-            inputDeleteBorrows=int(input("Do you want to delete transaction?: "))
+            inputDeleteBorrows=str(input("Do you want to delete transaction?: "))
             
-        elif transactionInput ==2: # display return transaction list
+        elif transactionInput =='2': # display return transaction list
             
             print("\n--------------------------------------------------\n")
             showAllReturns(returns)
@@ -699,20 +706,20 @@ def deleteTransactions(borrow,returns,user,book):
             print("---Input 1 if you want to Delete return transaction")
             print("---Input 0 if you want to cancel")
 
-            inputDeleteReturns=int(input("Do you want to delete transaction?: "))
+            inputDeleteReturns=str(input("Do you want to delete transaction?: "))
 
-            while inputDeleteReturns !=0:
-                if inputDeleteReturns == 1:
+            while inputDeleteReturns !='0':
+                if inputDeleteReturns == '1':
                     print("\n--------------------------------------------------\n")
                     showAllReturns(returns)
                     print("\n--------------------------------------------------\n")
                     inputReturnID=int(input("Input Transaction ID: "))
 
-                    if checkID(returns, inputReturnID) and returns[inputReturnID][6]!='not payed':
+                    if checkID(returns, inputReturnID)==True and returns[inputReturnID][6]!='not payed':
                         
                         print("\n--------------------------------------------------\n")    
-                        showAvalaibleBooks(book,'fiction','rented')
-                        showAvalaibleBooks(book,'non fiction','rented')
+                        showAvalaibleBooks(book,'fiction','avalaible')
+                        showAvalaibleBooks(book,'non fiction','avalaible')
                         print("\n--------------------------------------------------\n")
                         print("Choose book's category...")
                         inputCategory=str(input("Type your book's category: "))
@@ -723,20 +730,24 @@ def deleteTransactions(borrow,returns,user,book):
                             break
                         # set current book status to avalaible
                         currentBookISBN=returns[inputReturnID][0]
+                        if checkISBN(book,currentBookISBN,inputCategory) == False:
+                            print('\nNo ISBN Detected, please type the category correctly...')
+                            break
                         book[inputCategory][currentBookISBN][3]='rented'
                         
                         print("\n--------------------------------------------------\n")
                         print(f'\n\nThis is your transaction detail\nBook Title: {returns[inputReturnID][1]}\nName: {returns[inputReturnID][3]}\nDate: {returns[inputReturnID][4]}')
                         print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                        inputDelete=int(input('Choose your option: '))
+                        inputDelete=str(input('Choose your option: '))
 
-                        while inputDelete != 0:
-                            if inputDelete==1:
+                        while inputDelete != '0':
+                            if inputDelete=='1':
                                 if (inputReturnID!=''):
+                                    print(f'{returns[inputReturnID][3]} borrowing {returns[inputReturnID][1]} is Success...')
                                     del returns[inputReturnID]
-                                    (f'{returns[inputReturnID][3]} borrowing {returns[inputReturnID][1]} is Success...')
-
+                                    print("\n--------------------------------------------------\n")
                                     showAllReturns(returns)
+                                    print("\n--------------------------------------------------\n")
                                     break
                                 else:
                                     print("Wrong Input Cancelled to Save")
@@ -745,7 +756,7 @@ def deleteTransactions(borrow,returns,user,book):
                                 pass
                             print(f'\n\nThis is your transaction detail\nBook Title: {returns[inputReturnID][1]}\nName: {returns[inputReturnID][3]}\nDate: {returns[inputReturnID][4]}')
                             print('Do you want to delete?\n---Press 1 to delete\n---Press 0 to cancel')
-                            inputDelete=int(input('Choose your option: '))
+                            inputDelete=str(input('Choose your option: '))
 
                     elif returns[inputReturnID][6]=='not payed':
                         print('Transaction is still not payed...')
@@ -764,7 +775,7 @@ def deleteTransactions(borrow,returns,user,book):
                 print("---Input 1 if you want to Delete return transaction")
                 print("---Input 0 if you want to cancel")
 
-                inputDeleteReturns=int(input("Do you want to delete transaction?: "))
+                inputDeleteReturns=str(input("Do you want to delete transaction?: "))
 
         else :
             pass
@@ -773,5 +784,5 @@ def deleteTransactions(borrow,returns,user,book):
         print("Transaction Menu:")
         displayMenu(transactionMenu)
         #input the menu
-        transactionInput = int(input("Enter the number of the menu you want to run: "))
+        transactionInput = str(input("Enter the number of the menu you want to run: "))
 
