@@ -389,7 +389,7 @@ def addTransactions(borrow,returns,user,book):
                                 print(f"{book[inputCategory][inputISBN][0]} status set to {book[inputCategory][inputISBN][3]}")
                                 # adding tax to user who have late status
                                 if inputStatus=='late':
-                                    inputTax=diffDate*10000
+                                    inputTax=(diffDate//3)*10000
                                     user[inputUserID][4]+=inputTax
                                     print(f"{inputName} tax now is: {user[inputUserID][4]}")
                                 else:
